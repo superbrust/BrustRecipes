@@ -1,0 +1,570 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BrustRecipes</name>
+    </assembly>
+    <members>
+        <member name="T:BrustRecipes.Configuation.Automapper.AutomapperConfiguration">
+            <summary>
+            Service configuration for automapper
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Configuation.Automapper.AutomapperConfiguration.UseAutomapper(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures the app to use automapper
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:BrustRecipes.Configuration.Automapper.IngredientConfiguration.#ctor">
+            <summary>
+            Configures Recipe mappings
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Configuration.Automapper.RecipeConfiguration.#ctor">
+            <summary>
+            Configures Recipe mappings
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Configuration.Swagger.SwaggerExtension">
+            <summary>
+            Configures Swagger for the API
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Controllers.RecipesController">
+            <summary>
+            Controller for Recipe actions
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.#ctor(AutoMapper.IMapper,BrustRecipes.Services.Abstractions.IRecipeService)">
+            <summary>
+            Responsible for Recipes
+            </summary>
+            <param name="mapper">Automapper instance</param>
+            <param name="recipeService"></param>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.GetAlphabet">
+            <summary>
+            Retrieve the letters of the alphabet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.GetBases">
+            <summary>
+            Retrieve the base descriptions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.GetCourses">
+            <summary>
+            Retrieve the course descriptions
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.GetIngredients">
+            <summary>
+            Retrieve list of all ingredients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Controllers.RecipesController.SearchRecipes(BrustRecipes.Models.Recipe.RecipeSearchParameters)">
+            <summary>
+            Search Recipes using specified parameters
+            </summary>
+            <param name="searchParams"></param>
+            <returns></returns>
+        </member>
+        <member name="F:BrustRecipes.Controllers.WebApiControllerBase._mapper">
+            <summary>
+            Base class for WebApi Controllers
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Controllers.WebApiControllerBase.#ctor(AutoMapper.IMapper)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="mapper"></param>
+        </member>
+        <member name="P:BrustRecipes.Controllers.WebApiControllerBase.mapper">
+            <summary>
+            Mapper Base object
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Models.Recipe.Recipe">
+            <summary>
+            Represents a Recipe
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Base">
+            <summary>
+            Base
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Comments">
+            <summary>
+            Comments
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Course">
+            <summary>
+            Course
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Ingredients">
+            <summary>
+            Ingredients
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Difficulty">
+            <summary>
+            Difficulty
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Directions">
+            <summary>
+            Directions
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Ethnicity">
+            <summary>
+            Ethnicity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Id">
+            <summary>
+            Recipe Id
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Name">
+            <summary>
+            Recipe Name
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.PreparationTime">
+            <summary>
+            PreparationTime
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.ServingSize">
+            <summary>
+            Serving Size
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.Recipe.Source">
+            <summary>
+            Source
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Models.Recipe.RecipeSearchParameters">
+            <summary>
+            Define search parameters for recipes
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.RecipeSearchParameters.Base">
+            <summary>
+            Search by base
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.RecipeSearchParameters.BeginsWith">
+            <summary>
+            Search by first letter of recipe name
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Models.Recipe.RecipeSearchParameters.Course">
+            <summary>
+            Search by course
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Abstractions.IRecipeRepository">
+            <summary>
+            Exposes repository operations for recipes
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.Abstractions.IRecipeRepository.Find(System.Linq.Expressions.Expression{System.Func{BrustRecipes.Models.Recipe.Recipe,System.Boolean}})">
+            <summary>
+            Find a recipe based on predicate
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Repositories.Abstractions.IRecipeRepository.GetAlphabet">
+            <summary>
+            Return letters of the alphabet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Repositories.Abstractions.IRecipeRepository.GetBases">
+            <summary>
+            Return list of bases
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Repositories.Abstractions.IRecipeRepository.GetCourses">
+            <summary>
+            Return list of courses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Repositories.Abstractions.IRecipeRepository.GetIngredients">
+            <summary>
+            Return list of ingredients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.AlphabetEntity">
+            <summary>
+            Alphabet
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.AlphabetEntity.LetterDescription">
+            <summary>
+            Letter Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.AlphabetEntity.LetterId">
+            <summary>
+            Letter Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.BaseEntity">
+            <summary>
+            Base
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.BaseEntity.BaseDescription">
+            <summary>
+            Base Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.BaseEntity.BaseId">
+            <summary>
+            Base Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.CourseEntity">
+            <summary>
+            Course
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.CourseEntity.CourseDescription">
+            <summary>
+            Course Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.CourseEntity.CourseId">
+            <summary>
+            Course Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.DifficultyEntity">
+            <summary>
+            Base
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.DifficultyEntity.DifficultyDescription">
+            <summary>
+            Difficulty Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.DifficultyEntity.DifficultyId">
+            <summary>
+            Difficulty Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.EthnicityEntity">
+            <summary>
+            Ethnicity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.EthnicityEntity.EthnicityDescription">
+            <summary>
+            Ethnicity Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.EthnicityEntity.EthnicityId">
+            <summary>
+            Ethnicity Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.IngredientEntity">
+            <summary>
+            Ingredients
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.IngredientEntity.IngredientName">
+            <summary>
+            Ingredient Name
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.IngredientEntity.RecipeId">
+            <summary>
+            Recipe Id
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.IngredientEntity.MapOrder">
+            <summary>
+            Map Order
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.Entities.Recipes.PrepTimeEntity">
+            <summary>
+            Prep Time
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.PrepTimeEntity.PrepTimeDescription">
+            <summary>
+            Prep Time Description
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.Entities.Recipes.PrepTimeEntity.PrepTimeId">
+            <summary>
+            Prep Time Id
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.AlphabetEntityConfiguration">
+            <summary>
+            Alphabet Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.AlphabetEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.AlphabetEntity})">
+            <summary>
+            Configure Alphabet Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.BaseEntityConfiguration">
+            <summary>
+            Base Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.BaseEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.BaseEntity})">
+            <summary>
+            Configure Base Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.CourseEntityConfiguration">
+            <summary>
+            Course Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.CourseEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.CourseEntity})">
+            <summary>
+            Configure Course Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.DifficultyEntityConfiguration">
+            <summary>
+            Base Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.DifficultyEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.DifficultyEntity})">
+            <summary>
+            Configure Base Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.EthnicityEntityConfiguration">
+            <summary>
+            Ethnicity Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.EthnicityEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.EthnicityEntity})">
+            <summary>
+            Configure Ethnicity Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.IngredientEntityConfiguration">
+            <summary>
+            Ingredient Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.IngredientEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.IngredientEntity})">
+            <summary>
+            Configure Ingredient Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.PrepTimeEntityConfiguration">
+            <summary>
+            Prep Time Entity Configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.EntityConfiguration.PrepTimeEntityConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{BrustRecipes.Repositories.Entities.Recipes.PrepTimeEntity})">
+            <summary>
+            Configure Prep Time Entity
+            </summary>
+            <param name="builder"></param>
+        </member>
+        <member name="T:BrustRecipes.Repositories.EntityConfiguration.RecipeEntityConfiguration">
+            <summary>
+             Configure the Recipe Entity
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.IJetDataContext">
+            <summary>
+            Entity link to repository table
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IJetDataContext.Bases">
+            <summary>
+            Bases
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IJetDataContext.Courses">
+            <summary>
+            Courses
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IJetDataContext.Ingredients">
+            <summary>
+            Ingredients
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IJetDataContext.Letters">
+            <summary>
+            Letters of the alphabet
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IJetDataContext.Recipes">
+            <summary>
+            Recipes
+            </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.RecipeRepository">
+            <summary>
+            Provides access to the Recipe Aggregate Root
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.RecipeRepository.#ctor(AutoMapper.IMapper,BrustRecipes.Repositories.IJetDataContext)">
+            <summary>
+            constructor
+            </summary>
+            <param name="Mapper"></param>
+            <param name="Context"></param>
+        </member>
+        <member name="M:BrustRecipes.Repositories.RecipeRepository.Find(System.Linq.Expressions.Expression{System.Func{BrustRecipes.Models.Recipe.Recipe,System.Boolean}})">
+            <summary>
+            Retrieve Recipes bases on an expression
+            </summary>
+            <param name="expression"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BrustRecipes.Services.Abstractions.IRecipeService">
+            <summary>
+            Exposes Recipe operations
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Services.Abstractions.IRecipeService.GetAlphabet">
+            <summary>
+            Retrieves the letters of the alphabet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Abstractions.IRecipeService.GetBases">
+            <summary>
+            Retrieves List of Bases
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Abstractions.IRecipeService.GetCourses">
+            <summary>
+            Retrieves List of Courses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Abstractions.IRecipeService.GetIngredients">
+            <summary>
+            Retrieves List of Ingredients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Abstractions.IRecipeService.RecipeSearch(BrustRecipes.Models.Recipe.RecipeSearchParameters)">
+            <summary>
+            Retrieves recipes based on search parameters
+            </summary>
+            <param name="SearchParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="T:BrustRecipes.Services.Helpers.PredicateBuilder">
+            <summary>
+            Used to easily combine dynamic expressions
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Services.Helpers.PredicateBuilder.True``1">
+            <summary>
+            Always return true
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Helpers.PredicateBuilder.False``1">
+            <summary>
+            Always return false
+            </summary>
+            <typeparam name="T"></typeparam>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Helpers.PredicateBuilder.Or``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            Or condition with an existing predicate
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.Helpers.PredicateBuilder.And``1(System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}},System.Linq.Expressions.Expression{System.Func{``0,System.Boolean}})">
+            <summary>
+            And condition with an existing predicate
+            </summary>
+            <typeparam name="T"></typeparam>
+            <param name="expr1"></param>
+            <param name="expr2"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.#ctor(BrustRecipes.Repositories.Abstractions.IRecipeRepository)">
+            <summary>
+            Constructor
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.GetAlphabet">
+            <summary>
+            Retrieves letters of the alphabet
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.GetBases">
+            <summary>
+            Retrieves list of Bases
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.GetCourses">
+            <summary>
+            Retrieves list of Courses
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.GetIngredients">
+            <summary>
+            Retrieves list of Ingredients
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Services.RecipeService.RecipeSearch(BrustRecipes.Models.Recipe.RecipeSearchParameters)">
+            <summary>
+            Returns list of Recipes based on input search criteria
+            </summary>
+            <param name="SearchParameters"></param>
+            <returns></returns>
+        </member>
+        <member name="M:BrustRecipes.Startup.ConfigureRecipeServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Configures Recipe services
+            </summary>
+            <param name="services"></param>
+        </member>
+    </members>
+</doc>
