@@ -42,13 +42,19 @@ namespace BrustRecipes
 
             ConfigureDI(services);
             ConfigureRecipeServices(services);
-
         }
 
         private void ConfigureDI(IServiceCollection services)
         {
-            services.AddScoped<IJetDataContext, JetDataContext>();
-            services.AddDbContext<JetDataContext>(options =>
+            //services.AddScoped<IJetDataContext, JetDataContext>();
+            //services.AddDbContext<JetDataContext>(options =>
+            //{
+            //    options.EnableSensitiveDataLogging();
+            //    options.EnableDetailedErrors();
+            //});
+
+            services.AddScoped<IMySQLDataContext, MySQLDataContext>();
+            services.AddDbContext<MySQLDataContext>(options =>
             {
                 options.EnableSensitiveDataLogging();
                 options.EnableDetailedErrors();

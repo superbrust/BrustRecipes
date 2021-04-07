@@ -26,8 +26,8 @@ namespace BrustRecipes.Repositories.EntityConfiguration
             builder.Property(p => p.RecipeSource).HasColumnName("recipe_source");
             builder.Property(p => p.RecipeCost).HasColumnName("recipe_cost");
             builder.Property(p => p.RecipeModified).HasColumnName("recipe_modified");
-            builder.Property(p => p.RecipePicture).HasColumnName("recipe_picture");
-            builder.Property(p => p.RecipePictureType).HasColumnName("recipe_picture_type");
+            // builder.Property(p => p.RecipePicture).HasColumnName("recipe_picture");
+            // builder.Property(p => p.RecipePictureType).HasColumnName("recipe_picture_type");
             builder.Property(p => p.RecipePrivate).HasColumnName("recipe_private");
             builder.Property(p => p.RecipeSystem).HasColumnName("recipe_system");
             builder.Property(p => p.RecipeOwner).HasColumnName("recipe_owner");

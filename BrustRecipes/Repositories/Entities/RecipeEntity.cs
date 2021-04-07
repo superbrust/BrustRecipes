@@ -21,8 +21,8 @@ namespace BrustRecipes.Repositories.Entities.Recipes
         public DateTime? RecipeModified { get; set; }
         public string RecipeName { get; set; }
         public string RecipeOwner { get; set; }
-        public string RecipePicture { get; set; }
-        public string RecipePictureType { get; set; }
+        // public string RecipePicture { get; set; }
+        // public string RecipePictureType { get; set; }
         public PrepTimeEntity RecipePrepTime { get; set; }
         public long RecipePrepTimeId { get; set; }
         public long RecipePrivate { get; set; }

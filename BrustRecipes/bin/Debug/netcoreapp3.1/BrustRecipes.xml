@@ -432,12 +432,42 @@
             Recipes
             </summary>
         </member>
+        <member name="T:BrustRecipes.Repositories.IMySQLDataContext">
+            <summary>
+            Entity link to repository table
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IMySQLDataContext.Bases">
+            <summary>
+            Bases
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IMySQLDataContext.Courses">
+            <summary>
+            Courses
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IMySQLDataContext.Ingredients">
+            <summary>
+            Ingredients
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IMySQLDataContext.Letters">
+            <summary>
+            Letters of the alphabet
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.IMySQLDataContext.Recipes">
+            <summary>
+            Recipes
+            </summary>
+        </member>
         <member name="T:BrustRecipes.Repositories.RecipeRepository">
             <summary>
             Provides access to the Recipe Aggregate Root
             </summary>
         </member>
-        <member name="M:BrustRecipes.Repositories.RecipeRepository.#ctor(AutoMapper.IMapper,BrustRecipes.Repositories.IJetDataContext)">
+        <member name="M:BrustRecipes.Repositories.RecipeRepository.#ctor(AutoMapper.IMapper,BrustRecipes.Repositories.IMySQLDataContext)">
             <summary>
             constructor
             </summary>
