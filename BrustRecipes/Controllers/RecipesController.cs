@@ -39,7 +39,7 @@ namespace BrustRecipes.Controllers
         public async Task<IActionResult> GetAlphabet()
         {
             var results = await recipeService.GetAlphabet();
-            return Ok(mapper.Map<IEnumerable<AlphabetEntity>>(results));
+            return Ok(Mapper.Map<IEnumerable<AlphabetEntity>>(results));
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace BrustRecipes.Controllers
         public async Task<IActionResult> GetBases()
         {
             var results = await recipeService.GetBases();
-            return Ok(mapper.Map<IEnumerable<BaseEntity>>(results));
+            return Ok(Mapper.Map<IEnumerable<BaseEntity>>(results));
         }
         /// <summary>
         /// Retrieve the course descriptions
@@ -64,7 +64,7 @@ namespace BrustRecipes.Controllers
         public async Task<IActionResult> GetCourses()
         {
             var results = await recipeService.GetCourses();
-            return Ok(mapper.Map<IEnumerable<CourseEntity>>(results));
+            return Ok(Mapper.Map<IEnumerable<CourseEntity>>(results));
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace BrustRecipes.Controllers
         public async Task<IActionResult> GetIngredients()
         {
             var results = await recipeService.GetIngredients();
-            return Ok(mapper.Map<IEnumerable<IngredientEntity>>(results));
+            return Ok(Mapper.Map<IEnumerable<IngredientEntity>>(results));
         }
 
         /// <summary>
@@ -102,9 +102,9 @@ namespace BrustRecipes.Controllers
             if (searchParams.Course == "*") searchParams.Course = null;
 
             // Fetch results
-            var results = await recipeService.RecipeSearch(mapper.Map<RecipeSearchParameters>(searchParams));
+            var results = await recipeService.RecipeSearch(Mapper.Map<RecipeSearchParameters>(searchParams));
 
-            return Ok(mapper.Map<IEnumerable<RecipeReturnModel>>(results));
+            return Ok(Mapper.Map<IEnumerable<RecipeReturnModel>>(results));
         }
     }
 }

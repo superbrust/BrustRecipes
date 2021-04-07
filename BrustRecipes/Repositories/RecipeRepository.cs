@@ -21,7 +21,7 @@ namespace BrustRecipes.Repositories
         /// </summary>
         /// <param name="Mapper"></param>
         /// <param name="Context"></param>
-        public RecipeRepository(IMapper Mapper, IJetDataContext Context) : base(Mapper, Context)
+        public RecipeRepository(IMapper Mapper, IMySQLDataContext Context) : base(Mapper, Context)
         {
         }
 

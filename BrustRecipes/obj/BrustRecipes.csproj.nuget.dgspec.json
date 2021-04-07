@@ -52,13 +52,13 @@
               "target": "Package",
               "version": "[7.0.0, )"
             },
-            "EntityFrameworkCore.Jet": {
-              "target": "Package",
-              "version": "[3.1.0-alpha.3, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.10, )"
+            },
+            "MySql.Data.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.22, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -67,10 +67,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[5.0.0-rc5, )"
-            },
-            "System.Data.OleDb": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             }
           },
           "imports": [

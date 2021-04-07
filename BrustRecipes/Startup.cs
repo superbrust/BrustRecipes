@@ -19,16 +19,29 @@ using System.Threading.Tasks;
 
 namespace BrustRecipes
 {
+    /// <summary>
+    /// Startup class
+    /// </summary>
     public class Startup
     {
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="configuration"></param>
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
 
+        /// <summary>
+        /// Getter for configuration
+        /// </summary>
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to add services to the container. 
+        /// </summary>
+        /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
@@ -42,13 +55,12 @@ namespace BrustRecipes
 
             ConfigureDI(services);
             ConfigureRecipeServices(services);
-
         }
 
         private void ConfigureDI(IServiceCollection services)
         {
-            services.AddScoped<IJetDataContext, JetDataContext>();
-            services.AddDbContext<JetDataContext>(options =>
+            services.AddScoped<IMySQLDataContext, MySQLDataContext>();
+            services.AddDbContext<MySQLDataContext>(options =>
             {
                 options.EnableSensitiveDataLogging();
                 options.EnableDetailedErrors();
@@ -65,7 +77,9 @@ namespace BrustRecipes
             services.AddScoped<IRecipeRepository, RecipeRepository>();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// <summary>
+        /// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        /// </summary>
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

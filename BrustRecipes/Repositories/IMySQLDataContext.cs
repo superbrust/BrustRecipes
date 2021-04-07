@@ -7,7 +7,7 @@ namespace BrustRecipes.Repositories
     /// <summary>
     /// Entity link to repository table
     /// </summary>
-    public interface IJetDataContext : IDisposable
+    public interface IMySQLDataContext : IDisposable
     {
         /// <summary>
         /// Bases
