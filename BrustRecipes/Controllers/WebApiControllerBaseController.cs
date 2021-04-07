@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BrustRecipes.Controllers
 {
+    /// <summary>
+    /// WebApi Controller Base Class
+    /// </summary>
     public class WebApiControllerBase : ControllerBase
     {
         /// <summary>
@@ -22,7 +25,7 @@ namespace BrustRecipes.Controllers
         /// <summary>
         /// Mapper Base object
         /// </summary>
-        public IMapper mapper
+        public IMapper Mapper
         {
             get { return _mapper; }
             set { _mapper = value; }

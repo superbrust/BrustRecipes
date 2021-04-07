@@ -73,6 +73,11 @@
             <param name="searchParams"></param>
             <returns></returns>
         </member>
+        <member name="T:BrustRecipes.Controllers.WebApiControllerBase">
+            <summary>
+            WebApi Controller Base Class
+            </summary>
+        </member>
         <member name="F:BrustRecipes.Controllers.WebApiControllerBase._mapper">
             <summary>
             Base class for WebApi Controllers
@@ -84,7 +89,7 @@
             </summary>
             <param name="mapper"></param>
         </member>
-        <member name="P:BrustRecipes.Controllers.WebApiControllerBase.mapper">
+        <member name="P:BrustRecipes.Controllers.WebApiControllerBase.Mapper">
             <summary>
             Mapper Base object
             </summary>
@@ -402,36 +407,6 @@
              Configure the Recipe Entity
             </summary>
         </member>
-        <member name="T:BrustRecipes.Repositories.IJetDataContext">
-            <summary>
-            Entity link to repository table
-            </summary>
-        </member>
-        <member name="P:BrustRecipes.Repositories.IJetDataContext.Bases">
-            <summary>
-            Bases
-            </summary>
-        </member>
-        <member name="P:BrustRecipes.Repositories.IJetDataContext.Courses">
-            <summary>
-            Courses
-            </summary>
-        </member>
-        <member name="P:BrustRecipes.Repositories.IJetDataContext.Ingredients">
-            <summary>
-            Ingredients
-            </summary>
-        </member>
-        <member name="P:BrustRecipes.Repositories.IJetDataContext.Letters">
-            <summary>
-            Letters of the alphabet
-            </summary>
-        </member>
-        <member name="P:BrustRecipes.Repositories.IJetDataContext.Recipes">
-            <summary>
-            Recipes
-            </summary>
-        </member>
         <member name="T:BrustRecipes.Repositories.IMySQLDataContext">
             <summary>
             Entity link to repository table
@@ -461,6 +436,54 @@
             <summary>
             Recipes
             </summary>
+        </member>
+        <member name="T:BrustRecipes.Repositories.MySQLDataContext">
+            <summary>
+            MySQL Data Context
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.MySQLDataContext.#ctor(Microsoft.EntityFrameworkCore.DbContextOptions{BrustRecipes.Repositories.MySQLDataContext})">
+            <summary>
+            Contstructor
+            </summary>
+            <param name="options"></param>
+        </member>
+        <member name="P:BrustRecipes.Repositories.MySQLDataContext.Bases">
+            <summary>
+            Base Entity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.MySQLDataContext.Courses">
+            <summary>
+            Course Entity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.MySQLDataContext.Ingredients">
+            <summary>
+            Ingredient Entity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.MySQLDataContext.Letters">
+            <summary>
+            Alphabet Entity
+            </summary>
+        </member>
+        <member name="P:BrustRecipes.Repositories.MySQLDataContext.Recipes">
+            <summary>
+            Recipe Entity
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Repositories.MySQLDataContext.OnConfiguring(Microsoft.EntityFrameworkCore.DbContextOptionsBuilder)">
+            <summary>
+            Provides connection string
+            </summary>
+            <param name="optionsBuilder"></param>
+        </member>
+        <member name="M:BrustRecipes.Repositories.MySQLDataContext.OnModelCreating(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <summary>
+            Model Builder logic
+            </summary>
+            <param name="modelBuilder"></param>
         </member>
         <member name="T:BrustRecipes.Repositories.RecipeRepository">
             <summary>
@@ -590,11 +613,38 @@
             <param name="SearchParameters"></param>
             <returns></returns>
         </member>
+        <member name="T:BrustRecipes.Startup">
+            <summary>
+            Startup class
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:BrustRecipes.Startup.Configuration">
+            <summary>
+            Getter for configuration
+            </summary>
+        </member>
+        <member name="M:BrustRecipes.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container. 
+            </summary>
+            <param name="services"></param>
+        </member>
         <member name="M:BrustRecipes.Startup.ConfigureRecipeServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
             Configures Recipe services
             </summary>
             <param name="services"></param>
+        </member>
+        <member name="M:BrustRecipes.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IWebHostEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
         </member>
     </members>
 </doc>
