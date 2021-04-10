@@ -1,6 +1,8 @@
 ﻿using BrustRecipes.Repositories.Entities.Recipes;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Hosting.Internal;
+using System.Configuration;
+using System.Resources;
 
 namespace BrustRecipes.Repositories
 {
@@ -48,7 +50,7 @@ namespace BrustRecipes.Repositories
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // optionsBuilder.UseJet(@"Provider=Microsoft.ACE.OLEDB.12.0;Data Source=C:\Users\daveb\Dropbox\documents\BrustRecipes.mdb;");
-            optionsBuilder.UseMySQL(@"Server = rds-mysql-brustrecipes.char2ahcmvzs.us-east-2.rds.amazonaws.com; Port = 3306; Database = BrustRecipes; Uid = admin; Pwd = recipes!; convert zero datetime=True");
+            optionsBuilder.UseMySQL(@"Server = <server>; Port = 3306; Database = <database>; Uid = <user>; Pwd = <password>; convert zero datetime=True");
         }
 
         /// <summary>
